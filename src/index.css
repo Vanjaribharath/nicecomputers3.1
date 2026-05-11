@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.75rem;
+    --brand: 239 84% 67%;
+    --brand-soft: 239 84% 96%;
+    --success: 142 76% 36%;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+    --brand: 239 84% 67%;
+    --brand-soft: 239 30% 20%;
+    --success: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .bg-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  }
+  .bg-navy-deep {
+    background-color: #0f172a;
+  }
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  }
+  .bg-brand-soft {
+    background-color: hsl(var(--brand-soft));
+  }
+  .text-brand {
+    color: hsl(var(--brand));
+  }
+  .bg-brand {
+    background-color: hsl(var(--brand));
+  }
+  .border-brand {
+    border-color: hsl(var(--brand));
+  }
+  .ring-brand {
+    --tw-ring-color: hsl(var(--brand));
+  }
+  .focus-visible\:ring-brand:focus-visible {
+    --tw-ring-color: hsl(var(--brand));
+  }
+  .text-success {
+    color: hsl(var(--success));
+  }
+  .bg-success\/10 {
+    background-color: hsl(var(--success) / 0.1);
+  }
+  .bg-success {
+    background-color: hsl(var(--success));
+  }
+  .shadow-elegant {
+    box-shadow: 0 4px 24px -4px rgba(0,0,0,0.12), 0 2px 8px -2px rgba(0,0,0,0.08);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 40px -8px rgba(99,102,241,0.4);
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .font-display {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+  .animate-ping-slow {
+    animation: ping 2s cubic-bezier(0,0,0.2,1) infinite;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
